@@ -9,13 +9,13 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/artical-one', function(req,res){
+app.get('/artical-one.html', function(req,res){
    res.sendFile(path.join(__dirname, 'ui', 'ui/artical-one.html')); 
 });
-app.get('/artical-two', function(req,res){
+app.get('/artical-two.html', function(req,res){
    res.send('request is made for the artical-two to be display'); 
 });
-app.get('/artical-three', function(req,res){
+app.get('/artical-three.html', function(req,res){
    res.send('request is made for the artical-three to be display'); 
 });
 app.get('/ui/style.css', function (req, res) {
