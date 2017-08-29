@@ -5,6 +5,24 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var content={
+     title:'article one',
+   heading:'article one',
+      date:'26 jan 2017',
+   content:`'  
+           <p>
+                this is the artical i have writen for the first time with the help of the imad tech. This artical is not to shoe you, its for me to examine This artical is not to shoe you, its for me to examine This artical is not to shoe you, its for me to examine 
+            </p>
+            <p>
+                this is the artical i have writen for the first time with the help of the imad tech. This artical is not to shoe you, its for me to examine This artical is not to shoe you, its for me to examine 
+            </p>
+            <p>
+                this is the artical i have writen for the first time with the help of the imad tech. This artical is not to shoe you, its for me to examine
+           </p>'`
+};
+
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
