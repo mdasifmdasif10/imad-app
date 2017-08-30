@@ -1,5 +1,5 @@
 console.log('Loaded!');
-var img = document.getElementbyId('mk');
+var img = document.getElementById('mk');
 img.onclick = function() {
-    img.style.MarginLeft = '200px';
+    img.style.marginLeft = '100px';
 };
