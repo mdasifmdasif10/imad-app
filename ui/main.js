@@ -20,7 +20,7 @@ submit.onclick = function() {
     var list = '';
     for (var i = 0; i < naams.length; i++) {
         list += '<li>' + naams[i] + '</li>';
-    };
+    }
     var ul = document.getElementById('naamlist');
     ul.innerHTML = list;
 };
