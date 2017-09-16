@@ -16,10 +16,10 @@ var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
     //make a request
     //name list
-    var naam = ['name1', 'name2', 'name3', 'name4'];
+    var naams = ['name1', 'name2', 'name3', 'name4'];
     var list = '';
-    for (var i = 0; i < naam.length; i++) {
-        list += '<li>' + naam[i] + '</li>';
+    for (var i = 0; i < naams.length; i++) {
+        list += '<li>' + naams[i] + '</li>';
     };
     var ul = document.getElementById('naamlist');
     ul.innerHTML = list;
