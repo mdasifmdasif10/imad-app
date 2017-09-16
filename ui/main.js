@@ -10,8 +10,8 @@ img.onclick = function() {
     var interval = setInterval(moveRight, 50)
 };
 //submit button
-var nameInuput = document.getElementById('naam');
-var naam = nameInput.value;
+var naamInput = document.getElementById('naam');
+var naam = naamInput.value;
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
     //make a request
