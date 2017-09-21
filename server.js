@@ -6,19 +6,11 @@ var app = express();
 app.use(morgan('combined'));
 
 var content = {
-    title: 'article one',
-    heading: 'article one',
-    date: '26 jan 2017',
-    content: `'  
-           <p>
-                this is the artical i have writen for the first time with the help of the imad tech. This artical is not to shoe you, its for me to examine This artical is not to shoe you, its for me to examine This artical is not to shoe you, its for me to examine 
-            </p>
-            <p>
-                this is the artical i have writen for the first time with the help of the imad tech. This artical is not to shoe you, its for me to examine This artical is not to shoe you, its for me to examine 
-            </p>
-            <p>
-                this is the artical i have writen for the first time with the help of the imad tech. This artical is not to shoe you, its for me to examine
-           </p>'`
+        title: 'article one',
+        heading: 'article one',
+        date: '26 jan 2017',
+        content: `'  
+           
 };
 
 
@@ -28,6 +20,12 @@ app.get('/', function(req, res) {
 });
 app.get('/ui/image.jpg', function(req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'image.jpg'));
+});
+var naams = [];
+app.get('/submit-naam', function(req, res) {
+    var naam = req.param.naam;
+    naams.push(naam);
+    res.send(naams);
 });
 
 app.get('/ui/article.html', function(req, res) {
@@ -55,5 +53,6 @@ app.get('/ui/madi.png', function(req, res) {
 
 var port = 80;
 app.listen(port, function() {
-    console.log(`IMAD course app listening on port ${port}!`);
+    console.log(`
+        IMAD course app listening on port $ { port }!`);
 });
