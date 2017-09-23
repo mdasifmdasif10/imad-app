@@ -5,11 +5,11 @@ var Pool = require('pg').Pool;
 var crypto = require('crypto');
 
 var config = {
-    user : 'mdasifmdasif10',
-    database : 'mdasifmdasif10',
-    host : 'db.imad.hasura-app.io',
-    port : '5432',
-    password : process.env.DB_PASSWORD
+    user: 'mdasifmdasif10',
+    database: 'mdasifmdasif10',
+    host: 'db.imad.hasura-app.io',
+    port: '5432',
+    password: process.env.DB_PASSWORD
 }
 
 var app = express();
@@ -21,7 +21,7 @@ app.get('/', function(req, res) {
 
 function hash(input, salt) {
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
-    return hashed.toString('hex');
+    return ["pbkdf2", "10000", salt, hashed.toString('hex')].join('$');
 }
 app.get('/hash/:input', function(req, res) {
     var hashstring = hash(req.params.input, 'this-is-some-ramdon-string')
