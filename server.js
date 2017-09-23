@@ -5,11 +5,11 @@ var Pool = require('pg').Pool;
 var crypto = require('crypto');
 
 var config = {
-    user = 'mdasifmdasif10',
-    database = 'mdasifmdasif10',
-    host = 'db.imad.hasura-app.io',
-    port = '5432',
-    password = process.env.DB_PASSWORD
+    user : 'mdasifmdasif10',
+    database : 'mdasifmdasif10',
+    host : 'db.imad.hasura-app.io',
+    port : '5432',
+    password : process.env.DB_PASSWORD
 }
 
 var app = express();
