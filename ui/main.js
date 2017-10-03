@@ -24,3 +24,9 @@ submit.onclick = function() {
     var ul = document.getElementById('naamlist');
     ul.innerHTML = list;
 };
+var username = document.getElementById('username').value;
+var password = document.getElementById('password').value;
+console.login('username');
+console.login('password');
+request.open('POST', 'http://http://mdasifmdasif10.imad.hasura-app.io/login', true);
+request.send(JSON.stringify({ username: username, password: password }));

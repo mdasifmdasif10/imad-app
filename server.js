@@ -27,6 +27,18 @@ app.get('/hash/:input', function(req, res) {
     var hashstring = hash(req.params.input, 'this-is-some-ramdon-string')
     res.send(hashstring)
 });
+app.get('/create-user', function(req, res) {
+    var salt = crypton.getRandomBytes(128).toString('hex');
+    var dbstring = hash(password, salt);
+    Pool.query('INSERT INTO "users" (username,password) VALUE ($1,$2)' [username, dbstring], function(err, result) {
+            if (err) {
+                res.status(500).send(err.toString());
+            } else {
+                res.send(JSON.stringify(result.rows));
+            }
+        }
+    })
+});
 
 app.get('/ui/image.jpg', function(req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'image.jpg'));
