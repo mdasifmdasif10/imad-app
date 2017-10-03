@@ -37,7 +37,7 @@ app.get('/create-user', function(req, res) {
                 res.send(JSON.stringify(result.rows));
             }
         }
-    })
+    });
 });
 
 app.get('/ui/image.jpg', function(req, res) {
